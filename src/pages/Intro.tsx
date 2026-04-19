@@ -78,12 +78,22 @@ const Intro = () => {
             />
 
             <div className={`content-wrapper ${isVisible ? 'visible' : ''}`}>
-                <div className={`logo-mask-container ${isVisible ? 'logo-mask-reveal' : ''} ${isGlitching ? 'glitch-out' : ''} ${isExploding ? 'explode' : ''}`}>
-                    <img 
-                        src="/logo.png" 
-                        className="w-full h-auto block" 
-                        alt="Logo" 
-                    />
+                {/* Contenedor de Efectos (Glitch, Explode, Zoom) */}
+                <div 
+                    className={`transition-all duration-500 ease-out 
+                        ${isZooming ? 'scale-105 brightness-110' : 'scale-100'} 
+                        ${isGlitching ? 'glitch-out' : ''} 
+                        ${isExploding ? 'explode' : ''}`}
+                    style={{ '--rand': 0.5 } as React.CSSProperties}
+                >
+                    {/* Contenedor de Máscara (Revelado) */}
+                    <div className={`logo-mask-container ${isVisible ? 'logo-mask-reveal' : ''}`}>
+                        <img 
+                            src="/logo.png" 
+                            className="w-full h-auto block" 
+                            alt="Logo" 
+                        />
+                    </div>
                 </div>
                 
                 <div 
