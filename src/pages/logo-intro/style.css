@@ -1,0 +1,70 @@
+/* --- Estilos base para la intro --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000; /* Fondo negro para que resalte el logo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.intro-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container {
+    max-width: 400px;
+    width: 80%;
+    opacity: 1; /* El logo siempre tiene opacidad 1, lo ocultamos con la máscara */
+    
+    /* Estado inicial: Máscara al final (donde está todo transparente) */
+    -webkit-mask: url(img/urban-sprite.png);
+    mask: url(img/urban-sprite.png);
+    -webkit-mask-size: 3000% 100%;
+    mask-size: 3000% 100%;
+    -webkit-mask-position: 100% 0; 
+    mask-position: 100% 0;
+}
+
+.logo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- LOGICA DE LA ANIMACION DE MASCARA (Invertida para REVELAR) --- */
+
+/* Definicion de la animacion de pasos de reversa */
+@keyframes mask-reveal {
+    from {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+    }
+    to {
+        -webkit-mask-position: 0% 0;
+        mask-position: 0% 0;
+    }
+}
+
+/* Clase que dispara la animacion de REVELACIÓN */
+.reveal {
+    /* 
+       IMPORTANTE: Estos valores deben coincidir con la cantidad de cuadros del sprite original.
+       Demo 3 (impares) usa: 3000% y steps(29).
+    */
+    -webkit-animation: mask-reveal 1.4s steps(29) forwards;
+    animation: mask-reveal 1.4s steps(29) forwards;
+}
+
+/* 
+   Opcional: Si quieres un efecto inverso (que el logo desaparezca), 
+   puedes animar la posicion de 100% a 0% o usar el sprite-2 que tiene 
+   un patron distinto.
+*/

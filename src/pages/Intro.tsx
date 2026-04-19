@@ -78,11 +78,13 @@ const Intro = () => {
             />
 
             <div className={`content-wrapper ${isVisible ? 'visible' : ''}`}>
-                <img 
-                    src="/Logo.png" 
-                    className={`intro-logo ${isGlitching ? 'glitch-out' : ''} ${isExploding ? 'explode' : ''}`} 
-                    alt="Logo" 
-                />
+                <div className={`logo-mask-container ${isVisible ? 'logo-mask-reveal' : ''} ${isGlitching ? 'glitch-out' : ''} ${isExploding ? 'explode' : ''}`}>
+                    <img 
+                        src="/logo.png" 
+                        className="w-full h-auto block" 
+                        alt="Logo" 
+                    />
+                </div>
                 
                 <div 
                     className="interactive-group"
@@ -101,7 +103,10 @@ const Intro = () => {
                                 key={i}
                                 src={l.src}
                                 className={`letter ${isGlitching ? 'glitch-out' : ''} ${isExploding ? 'explode' : ''}`}
-                                style={{ '--rand': l.rand } as React.CSSProperties}
+                                style={{ 
+                                    '--rand': l.rand,
+                                    '--i': i 
+                                } as React.CSSProperties}
                                 alt={l.char}
                             />
                         ))}
