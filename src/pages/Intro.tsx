@@ -77,20 +77,42 @@ const Intro = () => {
                 alt="background"
             />
 
-            <div 
-                className="word-wrapper"
-                onMouseEnter={() => setIsZooming(true)}
-                onMouseLeave={() => setIsZooming(false)}
-            >
-                {letters.map((l, i) => (
-                    <img
-                        key={i}
-                        src={l.src}
-                        className={`letter ${isGlitching ? 'glitch-out' : ''} ${isExploding ? 'explode' : ''}`}
-                        style={{ '--rand': l.rand } as React.CSSProperties}
-                        alt={l.char}
+            <div className={`content-wrapper ${isVisible ? 'visible' : ''}`}>
+                <img 
+                    src="/Logo.png" 
+                    className={`intro-logo ${isGlitching ? 'glitch-out' : ''} ${isExploding ? 'explode' : ''}`} 
+                    alt="Logo" 
+                />
+                
+                <div 
+                    className="interactive-group"
+                    onMouseEnter={() => setIsZooming(true)}
+                    onMouseLeave={() => setIsZooming(false)}
+                >
+                    <img 
+                        src="/ArribaLetra.png" 
+                        className={`extra-decoration up ${isGlitching ? 'glitch-out' : ''} ${isExploding ? 'explode' : ''}`} 
+                        alt="Arriba" 
                     />
-                ))}
+
+                    <div className="word-wrapper">
+                        {letters.map((l, i) => (
+                            <img
+                                key={i}
+                                src={l.src}
+                                className={`letter ${isGlitching ? 'glitch-out' : ''} ${isExploding ? 'explode' : ''}`}
+                                style={{ '--rand': l.rand } as React.CSSProperties}
+                                alt={l.char}
+                            />
+                        ))}
+                    </div>
+
+                    <img 
+                        src="/AbajoLetra.png" 
+                        className={`extra-decoration down ${isGlitching ? 'glitch-out' : ''} ${isExploding ? 'explode' : ''}`} 
+                        alt="Abajo" 
+                    />
+                </div>
             </div>
         </div>
     );

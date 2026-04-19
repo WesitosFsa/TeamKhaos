@@ -23,9 +23,9 @@
 
   .bg-cape {
     position: absolute;
-    width: auto;
+    width: 70%;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     z-index: 1;
     opacity: 0;
     transform: scale(1.1);
@@ -42,21 +42,56 @@
     filter: brightness(1.2);
   }
 
-  .word-wrapper {
+  .content-wrapper {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     z-index: 10;
+  }
+
+  .intro-logo, .extra-decoration {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+  }
+
+  .visible .intro-logo, 
+  .visible .extra-decoration {
+    opacity: 1;
+  }
+
+  .intro-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .extra-decoration {
+    width: auto;
+    height: 40px; /* Ajusta según sea necesario */
+  }
+
+  .interactive-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
     cursor: pointer;
     transition: transform 0.3s ease;
   }
 
-  .word-wrapper:hover {
+  .interactive-group:hover {
     transform: scale(1.05);
+  }
+
+  .word-wrapper {
+    display: flex;
+    gap: 10px;
   }
 
   .letter {
     width: auto;
-    height: auto;
+    height: 120px;
     z-index: 10;
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
     animation: shuffle 5s cubic-bezier(0.85, 0, 0.15, 1) forwards;
