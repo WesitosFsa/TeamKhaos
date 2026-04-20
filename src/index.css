@@ -179,7 +179,7 @@
 
   @media (min-width: 768px) {
     .logo-mask-container {
-      max-width: 500px; /* Desktop size */
+      max-width: 800px; /* Desktop size */
     }
   }
 
