@@ -6,54 +6,55 @@ interface NavbarProps {
 
 function Navbar({ isOpen, setIsOpen }: NavbarProps) {
   return (
-    <>
-      <nav className="bg-indigo-600 text-white relative z-50">
-        <div className="max-w mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center">
-              {/* Hamburger menu button to open sidebar */}
-              <button
-                id="menu-btn"
-                className="bg-white text-indigo-600 font-bold py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors"
-                onClick={() => setIsOpen(!isOpen)}
+    <nav className="sticky top-0 z-50 glass-morphism border-b border-white/5 bg-gaming-black/80">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          <div className="flex items-center">
+            {/* Hamburger menu button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-lg text-white hover:bg-white/10 transition-all duration-300 focus:outline-none"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              </button>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
 
-              {/* Logo and text */}
-              <a
-                href="#"
-                className="hover:text-gray-200 flex items-center space-x-2 ml-4"
-              >
+            {/* Logo and Brand */}
+            <a
+              href="/"
+              className="flex items-center space-x-3 ml-4 group transition-transform duration-300 hover:scale-105"
+            >
+              <div className="relative">
+                <div className="absolute inset-0 bg-gaming-purple blur-md opacity-20 group-hover:opacity-40 transition-opacity rounded-full"></div>
                 <img
-                                
                   src="public/logo.png"
                   alt="logo"
-                  className="h-16 w-auto rounded-full"
-                
+                  className="relative h-12 w-12 rounded-xl object-contain border border-white/10 shadow-lg"
                 />
-                <span className="font-bold underline underline-offset-4">
-                  TEAM KHAOS
-                </span>
-              </a>
-            </div>
+              </div>
+              <span className="font-black text-xl tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
+                TEAM KHAOS
+              </span>
+            </a>
+          </div>
 
-            <div className="flex-1 flex items-center justify-center mx-4 sm:mx-8">
-              <div className="relative flex items-center w-full">
+          {/* Search Bar */}
+          <div className="hidden sm:flex flex-1 max-w-md mx-8">
+            <div className="relative w-full group">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                 <svg
-                  className="h-5 w-5 text-gray-200 absolute left-4"
+                  className="h-5 w-5 text-gray-500 group-focus-within:text-gaming-purple transition-colors"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -65,37 +66,44 @@ function Navbar({ isOpen, setIsOpen }: NavbarProps) {
                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                   ></path>
                 </svg>
-                <input
-                  type="text"
-                  placeholder="Buscar..."
-                  className="font-sans w-full bg-indigo-500 pl-12 pr-4 py-2 rounded-lg text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white"
-                />
               </div>
+              <input
+                type="text"
+                placeholder="Explorar juegos..."
+                className="w-full bg-white/5 border border-white/10 pl-12 pr-4 py-2.5 rounded-xl text-white text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gaming-purple/50 focus:bg-white/10 transition-all"
+              />
             </div>
+          </div>
 
-            <div className="hidden md:flex items-center space-x-6">
-              <a href="#" className="hover:text-gray-200 flex items-center space-x-2">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 5.158 6 8.583 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0a3 3 0 11-6 0m6 0a3 3 0 10-6 0"></path>
+          {/* Actions */}
+          <div className="flex items-center space-x-4">
+            <button className="hidden md:flex p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-all">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 5.158 6 8.583 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0a3 3 0 11-6 0m6 0a3 3 0 10-6 0"></path>
+              </svg>
+            </button>
+            
+            <a href="#" className="hidden sm:block">
+              <img
+                src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix"
+                alt="Profile"
+                className="h-10 w-10 rounded-xl border border-white/10 hover:border-gaming-purple transition-all cursor-pointer shadow-lg"
+              />
+            </a>
+
+            <button className="relative px-6 py-2.5 bg-gaming-purple hover:bg-gaming-purple/90 text-white font-bold rounded-xl transition-all duration-300 purple-glow-hover active:scale-95 text-sm uppercase tracking-wider overflow-hidden group">
+              <span className="relative z-10 flex items-center">
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
-              </a>
-              <a href="#" className="hover:text-gray-200">
-                <img
-                  src="https://placehold.co/40x40/ffffff/000000?text=Profile"
-                  alt="Perfil"
-                  className="h-10 w-auto rounded-full"
-                />
-              </a>
-              <button className="bg-white text-indigo-600 font-bold py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors">
-                + Subir Juego
-              </button>
-            </div>
-
-           
+                Subir
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            </button>
           </div>
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 }
 
