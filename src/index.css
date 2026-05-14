@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --color-gaming-black: #050505;
+  --color-gaming-charcoal: #0a0a0a;
+  --color-gaming-purple: #a855f7;
+  --color-gaming-purple-glow: #d8b4fe;
+  --color-gaming-gold: #fbbf24;
+}
+
 @layer base {
   body, html {
     margin: 0;
@@ -12,7 +20,35 @@
 }
 
 @layer components {
-  /* Intro Styles */
+  /* Existing Stars (from estrellas branch) */
+  .star-container {
+    @apply absolute inset-0 overflow-hidden pointer-events-none;
+  }
+
+  .star {
+    @apply absolute bg-gaming-gold rounded-full opacity-0;
+    width: 2px;
+    height: 2px;
+    box-shadow: 0 0 10px 1px #fbbf24;
+    animation: star-fall linear infinite;
+  }
+
+  @keyframes star-fall {
+    0% {
+      transform: translateY(-100px) translateX(0) scale(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+      transform: translateY(0) translateX(-10px) scale(1);
+    }
+    100% {
+      transform: translateY(100vh) translateX(-100px) scale(0.5);
+      opacity: 0;
+    }
+  }
+
+  /* Intro Styles (from main branch) */
   .intro-container {
     position: relative;
     width: 100vw;
@@ -188,46 +224,10 @@
     -webkit-animation: mask-reveal 1.4s steps(29) forwards;
     animation: mask-reveal 1.4s steps(29) forwards;
   }
-
-  /* Existing Stars (from estrellas branch) */
-  .star-container {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  .star {
-    position: absolute;
-    background-color: #fbbf24;
-    border-radius: 50%;
-    opacity: 0;
-    width: 2px;
-    height: 2px;
-    box-shadow: 0 0 10px 1px #fbbf24;
-    animation: star-fall linear infinite;
-  }
-
-  @keyframes star-fall {
-    0% {
-      transform: translateY(-100px) translateX(0) scale(0);
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-      transform: translateY(0) translateX(-10px) scale(1);
-    }
-    100% {
-      transform: translateY(100vh) translateX(-100px) scale(0.5);
-      opacity: 0;
-    }
-  }
 }
 
 .glass-morphism {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
 }
 
 .purple-glow {
