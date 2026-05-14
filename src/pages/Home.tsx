@@ -29,7 +29,31 @@ const Home = () => {
             </div>
         </header>
 
-        {/* Filter Bar (Simplified) */}
+        {/* About Team Khaos Section */}
+        <section className="py-16">
+            <h2 className="text-3xl font-bold mb-8">¿Quiénes somos?</h2>
+            <div className="p-8 rounded-2xl bg-gradient-to-r from-gaming-purple/10 to-transparent border border-white/5">
+                <p className="text-gray-300 leading-relaxed">
+                    Somos Team Khaos, una empresa dedicada al desarrollo de videojuegos con pasión. Nos enfocamos en crear experiencias inmersivas 
+                    que desafían los límites, combinando creatividad técnica y diseño narrativo para ofrecer títulos de alta calidad.
+                </p>
+            </div>
+        </section>
+
+        {/* Members Section */}
+        <section className="py-16">
+            <h2 className="text-3xl font-bold mb-8">Nuestro Equipo</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {['Diego Banda', 'Mateo Garzón', 'Diseñador', 'Programador'].map(name => (
+                    <div key={name} className="p-6 rounded-2xl bg-gaming-charcoal border border-white/5 text-center">
+                        <div className="w-16 h-16 rounded-full bg-gaming-purple/20 mx-auto mb-4"></div>
+                        <p className="font-bold">{name}</p>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+        {/* Filter Bar */}
         <div className="py-8 flex items-center justify-between border-b border-white/10 mb-8">
             <h2 className="text-2xl font-bold">Juegos Recientes</h2>
             <div className="flex gap-2">
@@ -48,20 +72,6 @@ const Home = () => {
             ))}
         </section>
       </div>
-
-      <footer className="py-12 px-4 border-t border-white/5 bg-gaming-charcoal">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-            <div className="flex items-center gap-4">
-                <span className="font-bold text-gaming-purple">TEAM KHAOS</span>
-                <span>© 2026</span>
-            </div>
-            <div className="flex gap-6 mt-4 md:mt-0">
-                <a href="#" className="hover:text-white transition-colors">Privacidad</a>
-                <a href="#" className="hover:text-white transition-colors">Términos</a>
-                <a href="#" className="hover:text-white transition-colors">Soporte</a>
-            </div>
-        </div>
-      </footer>
     </div>
   );
 };
