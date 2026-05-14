@@ -172,21 +172,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <footer className="py-24 px-4 border-t border-white/5">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-8 md:mb-0">
-                <div className="text-2xl font-black tracking-widest text-gaming-purple mb-2">TK</div>
-                <div className="text-xl font-bold tracking-tighter">TEAM KHAOS</div>
-                <p className="text-gray-500 text-sm mt-2">© 2026 Team Khaos. Todos los derechos reservados.</p>
-            </div>
-            
-            <div className="flex space-x-8">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacidad</a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Términos</a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">Soporte</a>
-            </div>
-        </div>
-      </footer>
     </div>
   );
 };
