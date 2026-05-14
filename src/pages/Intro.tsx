@@ -19,6 +19,13 @@ const Intro = () => {
   const [flashColor, setFlashColor] = useState("white");
 
   useEffect(() => {
+    document.body.classList.add("lock-scroll");
+    return () => {
+      document.body.classList.remove("lock-scroll");
+    };
+  }, []);
+
+  useEffect(() => {
     // Intro inicial sequence (5s wait as in script.js)
     const timer = setTimeout(() => {
       setIsVisible(true);

@@ -16,6 +16,10 @@
     min-height: 100%;
     background-color: #050505;
   }
+
+  .lock-scroll {
+    overflow: hidden;
+  }
 }
 
 @layer components {
