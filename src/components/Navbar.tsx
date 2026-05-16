@@ -14,6 +14,7 @@ function Navbar({ isOpen, setIsOpen }: NavbarProps) {
     { name: 'Inicio', path: '/visitante' },
     { name: 'Juegos', path: '/visitante/juegos' },
     { name: 'Proyectos', path: '/visitante/proyectos' },
+    { name: 'Nosotros', path: '/visitante/nosotros' },
   ];
 
   return (

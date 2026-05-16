@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom';
+import StarBackground from '../components/StarBackground';
 
 const VisitorHome = () => {
   const location = useLocation();
@@ -6,9 +7,11 @@ const VisitorHome = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
+      <StarBackground />
+      <div className="relative z-10">
       {/* 1. Hero Section */}
       {activeTab === 'inicio' && (
-        <section className="relative w-full bg-[#0a0a0a] overflow-hidden py-24">
+        <section className="relative w-full bg-transparent overflow-hidden py-24">
           <div className="absolute top-0 left-0 w-1/2 h-full bg-[#7c3aed] opacity-5 blur-[120px]"></div>
           <div className="max-w-7xl mx-auto px-8 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -64,7 +67,7 @@ const VisitorHome = () => {
 
       {/* 3. Últimas Noticias */}
       {activeTab === 'inicio' && (
-        <section className="w-full py-20 bg-[#0a0a0a]">
+        <section className="w-full py-20">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-2xl font-black uppercase mb-10">Últimas Noticias</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -99,6 +102,7 @@ const VisitorHome = () => {
           <button className="px-8 py-4 bg-[#7c3aed] hover:bg-[#6d28d9] font-bold rounded-lg transition-all whitespace-nowrap">Entrar ahora</button>
         </div>
       </section>
+      </div>
     </div>
   );
 };
