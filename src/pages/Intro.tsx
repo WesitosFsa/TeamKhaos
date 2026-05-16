@@ -62,7 +62,7 @@ const Intro = () => {
 
     // 3. Limpieza total y navegación (1000ms después del clic)
     setTimeout(() => {
-      navigate("/home");
+      navigate("/visitante");
     }, 1000);
   };
 

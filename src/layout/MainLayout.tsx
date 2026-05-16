@@ -67,9 +67,7 @@ function MainLayout() {
 
                 {/* Main Content Area */}
                 <main className={`flex-1 transition-all duration-500 ease-in-out ${isOpen ? "ml-72 opacity-50 scale-[0.98]" : ""}`}>
-                    <div className="max-w-7xl mx-auto">
-                        <Outlet />
-                    </div>
+                    <Outlet />
                 </main>
             </div>
             <Footer />
