@@ -12,9 +12,10 @@ const Proyectos = () => {
     <div className="relative min-h-screen bg-[#0a0a0a] text-white">
       <StarsOrbit />
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
-        <header className="mb-20">
-          <h1 className="text-5xl font-black mb-4">PROYECTOS</h1>
-          <p className="text-lg text-[rgba(255,255,255,0.45)]">Lo que estamos construyendo</p>
+        <header className="flex flex-col items-center gap-3 mb-16 pt-12 text-center">
+          <h1 className="text-4xl font-black uppercase tracking-widest text-white" style={{ textShadow: '0 0 30px rgba(124,58,237,0.8)' }}>PROYECTOS</h1>
+          <p className="text-sm uppercase tracking-widest text-white/40">Lo que estamos construyendo</p>
+          <div className="bg-gradient-to-r from-transparent via-[#7c3aed]/60 to-transparent h-px w-2/3 mx-auto mt-4" />
         </header>
         
         <div className="space-y-16">

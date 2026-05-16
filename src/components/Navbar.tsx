@@ -50,11 +50,12 @@ function Navbar({ isOpen, setIsOpen }: NavbarProps) {
                     <a
                       key={link.name}
                       href={link.path}
-                      className={`px-4 py-2 rounded-full font-bold uppercase tracking-wider text-sm transition-all ${
-                        isActive ? 'bg-gaming-purple text-white' : 'text-white hover:text-gaming-purple'
+                      className={`px-4 py-2 font-bold uppercase tracking-wider text-sm transition-all relative group ${
+                        isActive ? 'text-gaming-purple' : 'text-white hover:text-white'
                       }`}
                     >
                       {link.name}
+                      <span className={`absolute bottom-0 left-0 w-full h-0.5 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100 ${isActive ? 'bg-gaming-purple scale-x-100' : 'bg-white group-hover:bg-white'}`} />
                     </a>
                   );
                 })}
